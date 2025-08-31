@@ -3,8 +3,6 @@ This is the default astro template to start building projects that require a blo
 **It's divided into 2 different folders.** :
 - The front-end, **which is this whole github repo**, ready to go. (It also contains Tailwind.)
 - The backend, made in Sanity that must be created at the moment.
-
-**Both of these folders need to be deployed on Netlify, Vercel etc.**
 ---
 
 ## Setup this github repo, the front-end
@@ -99,4 +97,6 @@ import {postType} from './postType'
 export const schemaTypes = [postType]
 ```
 Now a new default post can be created.
-# Everything is set up!
+---
+# How to deploy both the front-end and the back-end
+

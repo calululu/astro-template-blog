@@ -13,7 +13,8 @@ To update Tailwind run: `npx @tailwindcss/upgrade`
 ## Sanity, backend
 Log in with sanity on a web browser. Create a new project (and a new org if there are none).  
 Add a new member, you, (besides the client) and give yourself the administrator role:
-<img width="633" height="409" alt="image" src="https://github.com/user-attachments/assets/85cebdcf-ab6b-4126-aa99-85d3b812f032" />
+<img width="621" height="164" alt="image" src="https://github.com/user-attachments/assets/c5c409fb-a89b-4679-96e3-720ed7c5e721" />
+
 
 ### Backend
 **This will install the backend. Do it on a new folder path**  

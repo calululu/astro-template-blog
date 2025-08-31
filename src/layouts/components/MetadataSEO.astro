@@ -1,0 +1,9 @@
+---
+const { metadescription } = Astro.props;
+---
+
+<meta charset='UTF-8' />
+<meta name='viewport' content='width=device-width' />
+<meta name='generator' content={Astro.generator} />
+<meta name='keywords' content='keyword1, keyword2' />
+<meta name="description" content={metadescription} />

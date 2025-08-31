@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* @font-face {
+  font-family: klavika-l;
+  src: url("/font/klavika-light.otf");
+  font-style: normal;
+  font-display: swap;
+} */
+
+@layer components {
+  html {
+    font-size: 100%; /* 16px default */
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: system-ui;
+    -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+  }
+  /* h1 and other to add default text size */
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+  }
+  /* nomalization preferencies, don't touch */
+  button {
+    cursor: pointer;
+  }
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block; /* normalmente sono tutti elementi in-line */
+    max-width: 100%; /* si adattano al contenitore */
+    user-select: none; /* non possono essere selezionate/evidenziate */
+  }
+}
+
+@theme {
+  /* --color-green-600: #004818; */
+  /* --font-klavika-l: klavika-l, sans-serif; */
+}
+
+@utility content-auto {
+  content-visibility: auto;
+}

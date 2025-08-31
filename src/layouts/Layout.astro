@@ -1,0 +1,23 @@
+---
+import Favicon from "./components/Favicon.astro";
+import MetadataSEO from "./components/MetadataSEO.astro";
+import Header from "./components/Header.astro";
+import Footer from "./components/Footer.astro";
+
+const {metadescription=""} = Astro.props;
+---
+
+<!doctype html>
+<html lang='it'>
+  <head>
+    <Favicon />
+    <MetadataSEO metadescription={metadescription} />
+    <link href='/src/assets/css/main.css' rel='stylesheet' />
+    <title>Pick a title</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

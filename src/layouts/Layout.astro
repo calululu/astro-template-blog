@@ -5,6 +5,9 @@ import Header from "./components/Header.astro";
 import Footer from "./components/Footer.astro";
 
 const {metadescription=""} = Astro.props;
+
+//Import CSS
+import "../assets/css/main.css";
 ---
 
 <!doctype html>
@@ -12,7 +15,6 @@ const {metadescription=""} = Astro.props;
   <head>
     <Favicon />
     <MetadataSEO metadescription={metadescription} />
-    <link href='/src/assets/css/main.css' rel='stylesheet' />
     <title>Pick a title</title>
   </head>
   <body>

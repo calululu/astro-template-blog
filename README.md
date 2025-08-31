@@ -50,13 +50,12 @@ Add a new member, you, (besides the client) and give yourself the administrator 
 
 ### Backend
 **This will install the backend. Do it on a new folder path**  
-Run:
-npm `create sanity@latest`  
+Run: `npm create sanity@latest`  
 Choose the production dataset, the clean template, typescript and the **new local path** where to install everything.  
 Open VS code and: `npm run dev`  
 It will establish a localhost connection at http://localhost:3333/ that requires to be logged in (with the sanity credentials) to enter.
 #### Creating a default post
-Add a new file in the `schemaTypes` folder named `postType.ts`:
+Add a new file in the folder `schemaTypes` named `postType.ts`:
 ```
 import {defineField, defineType} from 'sanity'
 

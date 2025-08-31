@@ -1,20 +1,52 @@
 # Astro Blog Template
 This is the default astro template to start building projects that require a blog.  
 **It's divided into 2 different folders.** :
-- The front-end, which is this whole github repo, ready to go. (It also contains Tailwind.)
+- The front-end, **which is this whole github repo**, ready to go. (It also contains Tailwind.)
 - The backend, made in Sanity that must be created at the moment.
 
 **Both of these folders need to be deployed on Netlify, Vercel etc.**
+---
 
-## To update the front-end folder
-To update Astro run: `npx @astrojs/upgrade`  
-To update Tailwind run: `npx @tailwindcss/upgrade`
+## Setup this github repo, the front-end
+### To update this front-end folder
+Try to `npm run dev` and see if it asks for a newer version of Astro. Run these 2 commands to update the dependencies:
+- To update Astro run: `npx @astrojs/upgrade`  
+- To update Tailwind run: `npx @tailwindcss/upgrade`
+
+### Setup the blog
+Run these 2 commands:
+```
+npx astro add @sanity/astro -y
+npm install astro-portabletext
+```
+Update the `astro.config.mjs`:
+```
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+
+import sanity from "@sanity/astro";
+
+export default defineConfig({
+  site: "https://websiteURLexample.it", //edit website url
+  vite: { plugins: [tailwindcss()] },
+  integrations: [
+    // 👇 Update these lines
+    sanity({
+      projectId: "MY-PROJECT-ID", // edit project id
+      dataset: "MY-DATASET-NAME", // edit dataset name
+      useCdn: false, // for static builds
+    }),
+  ],
+});
+```
+#### Now Sanity posts can be displayed on the front-end
+---
 
 ## Sanity, backend
-Log in with sanity on a web browser. Create a new project (and a new org if there are none).  
+The Sanity backend must be created at the moment.  
+Log in with sanity on a web browser with the client account. Create a new project (and a new org if there are none).  
 Add a new member, you, (besides the client) and give yourself the administrator role:
 <img width="621" height="164" alt="image" src="https://github.com/user-attachments/assets/c5c409fb-a89b-4679-96e3-720ed7c5e721" />
-
 
 ### Backend
 **This will install the backend. Do it on a new folder path**  
@@ -68,10 +100,4 @@ import {postType} from './postType'
 export const schemaTypes = [postType]
 ```
 Now a new default post can be created.
-
-## On the front-end folder, run these 2 commands:
-```
-npx astro add @sanity/astro -y
-npm install astro-portabletext
-```
 # Everything is set up!

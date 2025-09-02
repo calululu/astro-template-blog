@@ -98,5 +98,20 @@ export const schemaTypes = [postType]
 ```
 Now a new default post can be created.
 ---
-# How to deploy both the front-end and the back-end
 
+# How to self-host both the front-end and the back-end
+This example is for Netlify.  
+Deploy both the studio backend and the astro front end on Netlify, to have 2 projects with 2 different URLs.  
+The Astro front-end is already recognized by Netlify, but to deploy the studio:
+- Add the build command `npm run build`.
+- Add the folder path '*/dist*' in the Publish Directory.
+- Add env table with the dataset and projectID when you are really publishing the website online.
+- Leave other fields blank.
+
+In the Sanity webpage go to `API --> CORS Origins --> Add CORS origin --> Insert the website URL`.  
+Add in the Sanity Backend `sanity.cofig.ts` this: 
+```
+  basePath: '/studio', // Pick whatever name, watch out for route conflicts
+```
+It means that you will find the studio back end by going `yourAllowedDomain.com/studio`.  
+Trigger the build process once again on the Sanity Back-End and you are ready.
